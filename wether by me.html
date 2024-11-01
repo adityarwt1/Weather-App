@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .weather-widget {
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .weather-widget h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .temperature {
+      font-size: 48px;
+      margin: 10px 0;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .info div {
+      font-size: 16px;
+    }
+
+    input {
+      padding: 10px;
+      margin-top: 10px;
+      width: calc(100% - 24px);
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #1976d2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="weather-widget">
+    <h2>Weather</h2>
+    <div class="temperature" id="temperature">--°C</div>
+    <div class="description" id="description">--</div>
+    <div class="info">
+      <div>Humidity: <span id="humidity">--</span>%</div>
+      <div>City: <span id="CityName">--</span>%</div>
+      <div>Wind: <span id="wind">--</span> m/s</div>
+    </div>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button id="fetchWeatherBtn" onclick="geWeather()">Get Weather</button>
+    <img src="bangolia famous location.png" alt="" style="width: 200px; display: none;" id="bangolia-image">
+
+  </div>
+  <script>
+    const weatherOfHardiha = document.querySelector(`#cityInput`).value;
+    const city = `Bangolia`;
+    const Humidity = `10`
+    const Wind = `25`;
+    const Temperature = `35`
+    const description = `Sunny`
+    var cityInput = document.getElementById("cityInput");
+
+    function geWeather() {
+      
+        document.querySelector(`#temperature`).textContent = `${Temperature}°C`
+        document.querySelector(`#description`).textContent = `${description}`
+        document.querySelector(`#humidity`).textContent = `${Humidity}`
+        document.querySelector(`#CityName`).textContent = city;
+        document.querySelector(`#wind`).textContent = `${Wind} m/s`
+        document.querySelector(`#bangolia-image`).style.display = `flex`
+
+        cityInput.remove(``)
+
+      
+    }
+
+
+  </script>
+</body>
+
+</html>
